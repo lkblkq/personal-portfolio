@@ -1,0 +1,472 @@
+/* ============================================================
+   Contents / Sections — Personal Portfolio
+   Design inspired by: lyricode.me (Minimalist / Swiss / Monochrome)
+   ============================================================ */
+
+/* ---- Common Section ---- */
+.section {
+  padding: 150px 0;
+}
+
+.section:first-child {
+  padding-top: 80px;
+}
+
+.section-title {
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  color: #111;
+  margin-bottom: 80px;
+}
+
+/* ---- Logo Top (Homepage) ---- */
+.logo-top {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.logo-top .logo {
+  text-align: left;
+}
+
+.logo-top .logo img {
+  width: 268px;
+  height: auto;
+  opacity: 0;
+  animation: logoFadeIn 0.5s ease forwards;
+}
+
+@keyframes logoFadeIn {
+  to { opacity: 1; }
+}
+
+.logo-top .logo .name {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #757575;
+  line-height: 1.8;
+  letter-spacing: 0.06em;
+}
+
+/* ---- Main Visual ---- */
+.mv {
+  position: relative;
+  width: 68.57%;
+  margin-left: auto;
+  margin-right: 0;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-bottom: 150px;
+}
+
+.mv .photo {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.mv .photo img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  background: #d0d0d0;
+}
+
+/* Binary Code Decoration */
+.mv .code {
+  position: absolute;
+  top: 40px;
+  left: -60px;
+  background: #111;
+  color: #e0e0e0;
+  padding: 20px 24px;
+  font-family: 'Source Code Pro', 'SF Mono', 'Menlo', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  z-index: 2;
+  max-width: 230px;
+  word-break: break-all;
+}
+
+/* ---- Works Section ---- */
+.works .entry-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  gap: 0;
+  margin-left: 0;
+  width: 100%;
+}
+
+.works .entry {
+  width: 44.44%;
+  margin-right: 5.55%;
+}
+
+.works .entry:nth-child(even) {
+  margin-top: 135px;
+}
+
+.works .entry .photo {
+  overflow: hidden;
+}
+
+.works .entry .photo img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.4s ease;
+  aspect-ratio: 3 / 2;
+  background: #d0d0d0;
+  object-fit: cover;
+}
+
+.works .entry a:hover .photo img {
+  opacity: 0.7;
+}
+
+.works .info {
+  margin-bottom: 12px;
+}
+
+.works .category {
+  font-size: 11px;
+  color: #9e9e9e;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.works .category:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #c0c0c0;
+}
+
+.works .heading .title {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin-bottom: 4px;
+}
+
+.works .heading .type {
+  font-size: 12px;
+  color: #757575;
+}
+
+/* ---- Journal Section ---- */
+.journal .entry-list {
+  position: relative;
+}
+
+.journal .entry {
+  width: 70.37%;
+  margin-bottom: 60px;
+}
+
+.journal .entry:nth-child(odd) {
+  margin-left: 29.63%;
+}
+
+.journal .entry .entry-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.journal .entry .entry-inner .photo {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  overflow: hidden;
+}
+
+.journal .entry .entry-inner .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #d0d0d0;
+  transition: opacity 0.4s ease;
+}
+
+.journal .entry a:hover .photo img {
+  opacity: 0.7;
+}
+
+.journal .entry .entry-info {
+  flex: 1;
+}
+
+.journal .entry .tag {
+  display: inline-block;
+  font-size: 10px;
+  color: #9e9e9e;
+  letter-spacing: 0.08em;
+  border: 1px solid #c0c0c0;
+  padding: 2px 10px;
+  margin-bottom: 8px;
+}
+
+.journal .entry .title {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.journal .entry .date {
+  font-size: 11px;
+  color: #9e9e9e;
+  letter-spacing: 0.05em;
+}
+
+/* ---- About Section ---- */
+.about .about-inner {
+  width: 69.35%;
+}
+
+.about .concept {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 2.2;
+  letter-spacing: 0.04em;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.about .desc {
+  font-size: 13px;
+  line-height: 2.4;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.about .more {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #333;
+  position: relative;
+  padding-top: 10px;
+}
+
+.about .more:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: #333;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.about .more:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+/* ---- VIEW MORE Button ---- */
+.view-more {
+  margin-top: 80px;
+}
+
+.view-more a {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #333;
+  position: relative;
+  padding-top: 12px;
+}
+
+.view-more a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: #333;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.view-more a:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+/* ---- Section Divider ---- */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: #d0d0d0;
+  margin: 0;
+}
+
+/* ---- Contact Section ---- */
+.contact .contact-inner {
+  width: 69.35%;
+}
+
+.contact .intro {
+  font-size: 14px;
+  line-height: 2.2;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.contact .email-link {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  color: #111;
+  position: relative;
+  padding-top: 12px;
+  margin-bottom: 40px;
+}
+
+.contact .email-link:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: #333;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.contact .email-link:hover {
+  opacity: 1;
+}
+
+.contact .email-link:hover:before {
+  left: 0;
+  width: 100%;
+}
+
+.contact .social-links {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.contact .social-links a {
+  font-size: 12px;
+  color: #757575;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+.contact .social-links a:hover {
+  color: #111;
+  opacity: 1;
+}
+
+/* ---- Scroll-reveal animation ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Responsive ---- */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .section:first-child {
+    padding-top: 40px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .mv {
+    width: 100%;
+    margin-left: 0;
+    min-height: auto;
+    margin-bottom: 80px;
+  }
+
+  .mv .code {
+    top: 20px;
+    left: -20px;
+    font-size: 10px;
+    padding: 10px 14px;
+    max-width: 150px;
+  }
+
+  .works .entry-list {
+    flex-direction: column;
+  }
+
+  .works .entry {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .works .entry:nth-child(even) {
+    margin-top: 0;
+  }
+
+  .journal .entry {
+    width: 100%;
+  }
+
+  .journal .entry:nth-child(odd) {
+    margin-left: 0;
+  }
+
+  .journal .entry .entry-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .journal .entry .entry-inner .photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+
+  .about .about-inner,
+  .contact .contact-inner {
+    width: 100%;
+  }
+
+  .about .concept {
+    font-size: 15px;
+  }
+
+  .logo-top .logo img {
+    width: 180px;
+  }
+}
