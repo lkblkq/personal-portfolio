@@ -42,11 +42,11 @@ body {
 a {
   color: #333;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 a:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 img {
@@ -103,6 +103,11 @@ ul, ol {
   justify-content: space-between;
   padding: 0;
   outline: none;
+  transition: opacity 0.3s ease;
+}
+
+#btn_nav:hover {
+  opacity: 0.7;
 }
 
 #btn_nav .bar {
@@ -182,6 +187,8 @@ ul, ol {
 
 #pagetop:hover {
   opacity: 1;
+  transform: translateY(-2px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Top Navigation */
@@ -211,11 +218,14 @@ ul, ol {
   font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: lowercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 #snsnav ul li a:hover {
   color: #e0e0e0;
   opacity: 1;
+  transform: translateX(2px);
 }
 
 /* ---- Fullscreen Modal Nav ---- */
@@ -258,10 +268,12 @@ ul, ol {
   font-size: 28px;
   font-weight: 300;
   letter-spacing: 0.06em;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav_modal .gnav > ul > li > a:hover {
   opacity: 0.5;
+  transform: translateX(8px);
 }
 
 .nav_modal .nav_child {
@@ -274,11 +286,14 @@ ul, ol {
   color: #757575;
   font-size: 13px;
   letter-spacing: 0.03em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .nav_modal .nav_child li a:hover {
   color: #e0e0e0;
   opacity: 1;
+  transform: translateX(4px);
 }
 
 .nav_modal .snsnav ul {
@@ -290,11 +305,14 @@ ul, ol {
   color: #757575;
   font-size: 12px;
   letter-spacing: 0.05em;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .nav_modal .snsnav ul li a:hover {
   color: #e0e0e0;
   opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* ---- Main Container ---- */
@@ -337,11 +355,14 @@ ul, ol {
 #footer .nav_footer ul li a {
   font-size: 13px;
   color: #555;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
 }
 
 #footer .nav_footer ul li a:hover {
   color: #111;
   opacity: 1;
+  padding-left: 4px;
 }
 
 #footer .copyright {

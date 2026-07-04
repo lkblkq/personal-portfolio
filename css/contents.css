@@ -67,6 +67,7 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .mv .photo img {
@@ -75,6 +76,12 @@
   object-fit: cover;
   aspect-ratio: 16 / 9;
   background: #d0d0d0;
+  transition: transform 1.2s ease, filter 1.2s ease;
+}
+
+.mv .photo img:hover {
+  transform: scale(1.02);
+  filter: brightness(1.05);
 }
 
 /* Binary Code Decoration */
@@ -113,21 +120,45 @@
   margin-top: 135px;
 }
 
+.works .entry > a {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.works .entry > a:hover {
+  transform: translateY(-6px);
+}
+
 .works .entry .photo {
   overflow: hidden;
+  position: relative;
 }
 
 .works .entry .photo img {
   width: 100%;
   display: block;
-  transition: opacity 0.4s ease;
+  transition: transform 0.6s ease, filter 0.6s ease;
   aspect-ratio: 3 / 2;
   background: #d0d0d0;
   object-fit: cover;
 }
 
 .works .entry a:hover .photo img {
-  opacity: 0.7;
+  transform: scale(1.05);
+  filter: brightness(0.85);
+}
+
+.works .entry .photo:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0);
+  transition: background 0.6s ease;
+  pointer-events: none;
+}
+
+.works .entry a:hover .photo:after {
+  background: rgba(17, 17, 17, 0.15);
 }
 
 .works .info {
@@ -161,11 +192,21 @@
   letter-spacing: 0.04em;
   color: #111;
   margin-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.works .entry a:hover .heading .title {
+  color: #555;
 }
 
 .works .heading .type {
   font-size: 12px;
   color: #757575;
+  transition: color 0.3s ease;
+}
+
+.works .entry a:hover .heading .type {
+  color: #999;
 }
 
 /* ---- Journal Section ---- */
@@ -182,6 +223,15 @@
   margin-left: 29.63%;
 }
 
+.journal .entry > a {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.journal .entry > a:hover {
+  transform: translateY(-4px);
+}
+
 .journal .entry .entry-inner {
   display: flex;
   align-items: flex-start;
@@ -193,6 +243,7 @@
   width: 180px;
   height: 120px;
   overflow: hidden;
+  position: relative;
 }
 
 .journal .entry .entry-inner .photo img {
@@ -201,11 +252,25 @@
   object-fit: cover;
   display: block;
   background: #d0d0d0;
-  transition: opacity 0.4s ease;
+  transition: transform 0.6s ease, filter 0.6s ease;
 }
 
 .journal .entry a:hover .photo img {
-  opacity: 0.7;
+  transform: scale(1.08);
+  filter: brightness(0.8);
+}
+
+.journal .entry .entry-inner .photo:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 17, 17, 0);
+  transition: background 0.6s ease;
+  pointer-events: none;
+}
+
+.journal .entry a:hover .photo:after {
+  background: rgba(17, 17, 17, 0.12);
 }
 
 .journal .entry .entry-info {
@@ -220,6 +285,12 @@
   border: 1px solid #c0c0c0;
   padding: 2px 10px;
   margin-bottom: 8px;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.journal .entry a:hover .tag {
+  color: #555;
+  border-color: #555;
 }
 
 .journal .entry .title {
@@ -229,12 +300,22 @@
   color: #111;
   margin-bottom: 6px;
   line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.journal .entry a:hover .title {
+  color: #555;
 }
 
 .journal .entry .date {
   font-size: 11px;
   color: #9e9e9e;
   letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+}
+
+.journal .entry a:hover .date {
+  color: #bbb;
 }
 
 /* ---- About Section ---- */
@@ -265,6 +346,7 @@
   color: #333;
   position: relative;
   padding-top: 10px;
+  transition: letter-spacing 0.4s ease, color 0.3s ease;
 }
 
 .about .more:before {
@@ -275,7 +357,12 @@
   width: 60%;
   height: 1px;
   background: #333;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
+  transition: left 0.4s ease, width 0.4s ease;
+}
+
+.about .more:hover {
+  letter-spacing: 0.14em;
+  color: #111;
 }
 
 .about .more:hover:before {
@@ -295,6 +382,7 @@
   color: #333;
   position: relative;
   padding-top: 12px;
+  transition: letter-spacing 0.4s ease, color 0.3s ease;
 }
 
 .view-more a:before {
@@ -305,7 +393,12 @@
   width: 60%;
   height: 1px;
   background: #333;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
+  transition: left 0.4s ease, width 0.4s ease;
+}
+
+.view-more a:hover {
+  letter-spacing: 0.14em;
+  color: #111;
 }
 
 .view-more a:hover:before {
@@ -342,6 +435,7 @@
   position: relative;
   padding-top: 12px;
   margin-bottom: 40px;
+  transition: letter-spacing 0.4s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .contact .email-link:before {
@@ -352,10 +446,13 @@
   width: 60%;
   height: 1px;
   background: #333;
-  transition: left 0.3s ease-out, width 0.3s ease-out;
+  transition: left 0.4s ease, width 0.4s ease;
 }
 
 .contact .email-link:hover {
+  letter-spacing: 0.1em;
+  color: #111;
+  transform: translateY(-1px);
   opacity: 1;
 }
 
@@ -375,11 +472,14 @@
   color: #757575;
   letter-spacing: 0.05em;
   text-transform: lowercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
 }
 
 .contact .social-links a:hover {
   color: #111;
   opacity: 1;
+  transform: translateY(-2px);
 }
 
 /* ---- Scroll-reveal animation ---- */
@@ -438,12 +538,20 @@
     margin-top: 0;
   }
 
+  .works .entry a:hover {
+    transform: translateY(-3px);
+  }
+
   .journal .entry {
     width: 100%;
   }
 
   .journal .entry:nth-child(odd) {
     margin-left: 0;
+  }
+
+  .journal .entry a:hover {
+    transform: translateY(-2px);
   }
 
   .journal .entry .entry-inner {
