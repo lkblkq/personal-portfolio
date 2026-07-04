@@ -70,6 +70,12 @@
   overflow: hidden;
 }
 
+.mv .photo video {
+  width: 100%; display: block; object-fit: cover;
+  aspect-ratio: 16 / 9; background: #d0d0d0;
+  transition: transform 1.2s ease, filter 1.2s ease;
+}
+.mv .photo:hover video { transform: scale(1.02); filter: brightness(1.05); }
 .mv .photo img {
   width: 100%;
   display: block;
