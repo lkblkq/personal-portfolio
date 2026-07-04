@@ -335,7 +335,7 @@ ul, ol {
   left: 0;
   width: 100%;
   min-height: 100%;
-  background: rgba(241, 241, 241, 0.88);
+  background: rgba(241, 241, 241, 0.45);
   z-index: 1;
   pointer-events: none;
 }
@@ -348,6 +348,7 @@ ul, ol {
 #container {
   margin-left: 150px;
   padding: 0 5.714%;
+  text-shadow: 0 1px 4px rgba(241, 241, 241, 0.8);
 }
 
 /* ---- Footer ---- */
@@ -355,6 +356,7 @@ ul, ol {
   margin-left: 150px;
   padding: 80px 5.714% 40px;
   border-top: 1px solid #d0d0d0;
+  text-shadow: 0 1px 4px rgba(241, 241, 241, 0.8);
 }
 
 #footer .nav_footer {
