@@ -141,6 +141,34 @@ ul, ol { list-style: none; }
 .nav_modal .snsnav ul li a:hover { color: #e0e0e0; opacity: 1; transform: translateY(-2px); }
 
 /* Main Container */
+#contents {
+  position: relative;
+  min-height: 100vh;
+}
+#contents .bg-video {
+  position: fixed;
+  top: 0;
+  left: 150px;
+  width: calc(100% - 150px);
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+#contents .bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(241, 241, 241, 0.88);
+  z-index: 1;
+  pointer-events: none;
+}
+#contents > * {
+  position: relative;
+  z-index: 2;
+}
+
 #container { margin-left: 150px; padding: 0 5.714%; }
 
 /* Footer */
@@ -181,12 +209,6 @@ ul, ol { list-style: none; }
   padding-bottom: 0; padding-top: 0; margin-bottom: 150px;
 }
 .mv .photo { width: 100%; position: relative; z-index: 1; overflow: hidden; }
-.mv .photo video {
-  width: 100%; display: block; object-fit: cover;
-  aspect-ratio: 16 / 9; background: #d0d0d0;
-  transition: transform 1.2s ease, filter 1.2s ease;
-}
-.mv .photo:hover video { transform: scale(1.02); filter: brightness(1.05); }
 .mv .photo img {
   width: 100%; display: block; object-fit: cover;
   aspect-ratio: 16 / 9; background: #d0d0d0;
@@ -353,6 +375,7 @@ ul, ol { list-style: none; }
   #footer { margin-left: 50px; padding: 40px 20px 30px; }
   .nav_modal .wrapper { width: 90%; padding: 40px 20px; flex-direction: column; gap: 40px; }
   .nav_modal .gnav > ul > li > a { font-size: 22px; }
+  #contents .bg-video { left: 50px; width: calc(100% - 50px); }
   .section { padding: 80px 0; }
   .section:first-child { padding-top: 40px; }
   .section-title { font-size: 20px; margin-bottom: 40px; }
@@ -374,6 +397,8 @@ ul, ol { list-style: none; }
 <body>
 
 <div id="contents" class="top">
+  <video class="bg-video" src="images/video-bg.mp4" autoplay loop muted playsinline></video>
+  <div class="bg-overlay"></div>
   <header id="header">
     <div class="wrapper">
       <div class="nav_side">
@@ -457,7 +482,7 @@ ul, ol { list-style: none; }
     <!-- Main Visual -->
     <section class="mv">
       <div class="photo">
-        <video src="images/video-bg.mp4" autoplay loop muted playsinline></video>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Crect fill='%23d0d0d0' width='1600' height='900'/%3E%3Ctext x='800' y='480' font-family='monospace' font-size='18' fill='%23aaa' text-anchor='middle'%3EMain Visual Image%3C/text%3E%3C/svg%3E" alt="Main Visual" width="1600" height="900">
       </div>
       <div class="code">
         01000100010001001<wbr>0101001101001001<wbr>0100011101001110<wbr>

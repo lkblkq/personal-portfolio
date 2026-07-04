@@ -315,6 +315,35 @@ ul, ol {
   transform: translateY(-2px);
 }
 
+/* ---- Contents Background ---- */
+#contents {
+  position: relative;
+  min-height: 100vh;
+}
+#contents .bg-video {
+  position: fixed;
+  top: 0;
+  left: 150px;
+  width: calc(100% - 150px);
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+}
+#contents .bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background: rgba(241, 241, 241, 0.88);
+  z-index: 1;
+  pointer-events: none;
+}
+#contents > * {
+  position: relative;
+  z-index: 2;
+}
+
 /* ---- Main Container ---- */
 #container {
   margin-left: 150px;
@@ -404,6 +433,11 @@ ul, ol {
 
   #pagetop {
     font-size: 8px;
+  }
+
+  #contents .bg-video {
+    left: 50px;
+    width: calc(100% - 50px);
   }
 
   #container {
